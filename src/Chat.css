@@ -1,0 +1,83 @@
+.chatContainer {
+    width: 50vh;
+    height:70vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  
+  .chatHeader {
+    width: 100%;
+    background-color: #ca05ac;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .chatBody {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    text-align: left;
+    background-color: #e6e6e6;
+    padding: 20px 25px;
+    margin: 2px 0;
+    border-radius: 3px;
+  }
+
+  .message em {
+    font-size: 0.8em;
+    color: #666;
+  }
+  
+  .chatFooter {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .messageInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .sendButton {
+    width: 70px;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #212121;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sendButton:hover {
+    background-color: #0f0f0f;
+  }
+  
+  .leaveButton {
+    width: 70px;
+    padding: 10px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #dbdbdb;
+  }
+
+  .leaveButton:hover {
+    background-color: #c9c9c9;
+  }
+    
