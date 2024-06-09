@@ -25,30 +25,36 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {!joined ? (
-        <div className="joinContainer">
-          <header className="header">Join A Chat Room</header>
-          <input
-            type="text"
-            placeholder="Username"
-            onChange={event => setUsername(event.target.value)}
-            className="inputField"
-          />
-          <input
-            type="text"
-            placeholder="Room"
-            onChange={event => setRoom(event.target.value)}
-            onKeyDown={event => event.key === 'Enter' && joinRoom()}
-            className="inputField"
-          />
-          <button onClick={joinRoom} className="joinButton">Join Room</button>
-        </div>
-      ) : (
-        <Chat socket={socket} username={username} room={room} />
-      )}
-    </div>
-  );
+      <div className="App">
+        {!joined ? (
+          <div className="joinContainer">
+            <header className="header">Join A Chat Room</header>
+            <input
+              type="text"
+              placeholder="Username"
+              onChange={event => setUsername(event.target.value)}
+              className="inputField"
+            />
+            <input
+              type="text"
+              placeholder="Room"
+              onChange={event => setRoom(event.target.value)}
+              onKeyDown={event => event.key === 'Enter' && joinRoom()}
+              className="inputField"
+            />
+            <button onClick={joinRoom} className="joinButton">Join Room</button>
+
+            <footer class="joinFooter">
+              <p>Created with React, Node.js, and Socket.io.<br></br>View the server code <a href="https://github.com/emmad241/chat-app">here</a>, and client code <a href="https://github.com/emmad241/chat-app-client">here.</a></p>
+            </footer>
+          </div>
+        ) : (
+          <>
+            <Chat socket={socket} username={username} room={room} />
+          </>
+        )}
+      </div>
+    );
 }
 
 export default App;

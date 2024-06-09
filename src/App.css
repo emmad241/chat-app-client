@@ -52,3 +52,17 @@ html, body, #root, .App {
 .joinButton:hover {
   background-color: #0f0f0f;
 }
+
+.joinFooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-top: 1px solid #ccc;
+}
+
+.joinFooter a {
+  color: #238ad8;
+  text-decoration: none;
+}
