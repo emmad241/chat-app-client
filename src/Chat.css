@@ -24,17 +24,40 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
   }
   
-  .message {
+  .messageLeft {
+    width: 40%;
     text-align: left;
     background-color: #e6e6e6;
     padding: 20px 25px;
-    margin: 2px 0;
-    border-radius: 3px;
+    margin: 5px 0;
+    border-radius: 6px;
+    word-wrap: break-word;
   }
 
-  .message em {
+  .messageRight {
+    width: 40%;
+    text-align: right;
+    background-color: #e6e6e6;
+    padding: 20px 25px;
+    margin: 5px 185px;
+    border-radius: 6px;
+    word-wrap: break-word;
+  }
+
+  .messageCenter {
+    width: 50%;
+    text-align: center;
+    padding: 20px 25px;
+    margin: 5px 75px;
+    border-radius: 3px;
+    color: #666;
+    word-wrap: break-word;
+  }
+
+  .messageLeft em, .messageRight em {
     font-size: 0.8em;
     color: #666;
   }

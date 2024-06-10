@@ -16,7 +16,8 @@ function App() {
           room: room,
           author: username,
           message: "has joined the chat",
-          time: new Date(Date.now()).getHours() + ':' + new Date(Date.now()).getMinutes()
+          time: new Date(Date.now()).getHours() + ':' + new Date(Date.now()).getMinutes(),
+          position: "messageCenter"
         };
 
         socket.emit('joinRoom', data);

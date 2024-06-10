@@ -21,13 +21,21 @@ function Chat({ socket, username, room }) {
     setHeaderColour(getRandomColour())
 
     socket.on('receiveMessage', (message) => {
+      console.log(message);
+      if (message.position !== 'messageCenter') {
+        if (message.author === username) {
+            message.position = 'messageLeft';
+        }else{
+            message.position = 'messageRight';
+        }
+      }
       setMessageList((messageList) => [...messageList, message]);
     });
 
     return () => {
       socket.off('receiveMessage');
     };
-  }, [socket]);
+  }, [socket, username]);
 
   const sendMessage = async () => {
     if (message !== "") {
@@ -48,7 +56,8 @@ function Chat({ socket, username, room }) {
         room: room,
         author: username,
         message: "has left the chat",
-        time: new Date(Date.now()).getHours() + ':' + new Date(Date.now()).getMinutes()
+        time: new Date(Date.now()).getHours() + ':' + new Date(Date.now()).getMinutes(),
+        position: 'messageCenter'
     };
 
     await socket.emit('leaveRoom', messageData)
@@ -62,7 +71,7 @@ function Chat({ socket, username, room }) {
       </div>
       <div className="chatBody">
         {messageList.map((msg, index) => (
-          <div key={index} className="message">
+          <div key={index} className={msg.position}>
             <strong>{msg.author}</strong>: {msg.message}<br></br><em>{msg.time}</em>
           </div>
         ))}

@@ -1,3 +1,12 @@
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar { 
+    display: none; 
+}
+
 html, body, #root, .App {
   margin: 0;
   padding: 0;
